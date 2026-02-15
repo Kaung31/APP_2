@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased text-black bg-white selection:bg-yellow-200;
+  }
+}
+
+/* Smooth Webflow-like transitions */
+.transition-all {
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom shadow for Nanobanana aesthetic */
+.shadow-2xl {
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove default scrollbar for that app feel */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
