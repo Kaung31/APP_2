@@ -2,11 +2,10 @@
 "use client";
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion'; // New dependency for animations
-import { Search, Bike, Zap, ArrowRight, Gauge, ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Search, Zap, ArrowRight, Gauge, ShieldCheck } from 'lucide-react';
 
-// Animation variants for consistency
+// Animation variants for a smooth "Webflow" feel
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -25,16 +24,8 @@ export default function HomePage() {
       initial="initial"
       animate="animate"
       className="p-8 max-w-[1400px] mx-auto space-y-20"
-    </motion.div>
-  );
-}
-
-// Full Page implementation with Framer Motion
-export function NanobananaHome() {
-  return (
-    <div className="p-8 max-w-[1400px] mx-auto space-y-20">
-      
-      {/* --- HERO SECTION: NANOBANANA BRANDING --- */}
+    >
+      {/* --- HERO SECTION --- */}
       <section className="relative flex flex-col items-center justify-center text-center py-12">
         <motion.h1 
           variants={fadeInUp}
@@ -43,43 +34,44 @@ export function NanobananaHome() {
           NANOBANANA
         </motion.h1>
         
-        {/* Animated Navigation Bar */}
+        {/* Navigation Bar */}
         <motion.nav 
           variants={fadeInUp}
           className="flex flex-wrap justify-center gap-8 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-16"
         >
           {['Diagnose', 'Battery Repair', 'Motor Maintenance', 'Parts Store', 'Troubleshooting'].map((item, i) => (
-            <span key={i} className={`cursor-pointer hover:text-black transition-colors ${item === 'Parts Store' ? 'text-yellow-500 border-b-2 border-yellow-500 pb-1' : ''}`}>
+            <span 
+              key={i} 
+              className={`cursor-pointer hover:text-black transition-colors ${
+                item === 'Parts Store' ? 'text-yellow-500 border-b-2 border-yellow-500 pb-1' : ''
+              }`}
+            >
               {item}
             </span>
           ))}
         </motion.nav>
         
-        {/* Floating 3D Scooter with Framer Motion Animation */}
+        {/* Floating Scooter Image */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ 
-            opacity: 1, 
-            scale: 1, 
-            y: 0,
-            transition: { duration: 1, ease: "easeOut" }
-          }}
-          className="relative w-full max-w-5xl h-[500px] flex items-center justify-center cursor-crosshair"
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="relative w-full max-w-5xl h-[500px] flex items-center justify-center"
         >
           <motion.img 
-            animate={{ 
-              y: [0, -15, 0],
-            }}
-            transition={{ 
-              duration: 5, 
-              repeat: Infinity, 
-              ease: "easeInOut" 
-            }}
+            animate={{ y: [0, -15, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
             src="/images/hero-scooter.png" 
             alt="Nanobanana Scooter" 
             className="w-full h-auto object-contain z-10"
+            onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                if (e.currentTarget.parentElement) {
+                   e.currentTarget.parentElement.innerHTML = '<div class="text-center p-10 border-4 border-dashed border-black/10 rounded-xl"><p class="font-bold text-gray-400">MISSING: /images/hero-scooter.png</p></div>';
+                }
+            }}
           />
-          {/* Pulsing Dynamic Shadow */}
+          {/* Animated Shadow */}
           <motion.div 
              animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -97,7 +89,7 @@ export function NanobananaHome() {
         </motion.div>
       </section>
 
-      {/* --- TECH SPECS GRID (Bento Style) --- */}
+      {/* --- TECH SPECS GRID --- */}
       <motion.div 
         variants={staggerContainer}
         className="grid grid-cols-1 md:grid-cols-4 gap-6"
@@ -123,7 +115,7 @@ export function NanobananaHome() {
         </motion.div>
       </motion.div>
 
-      {/* --- QUICK ACTION SEARCH --- */}
+      {/* --- DIAGNOSTIC SEARCH --- */}
       <motion.section 
         variants={fadeInUp}
         className="flex justify-center pb-20"
@@ -139,6 +131,6 @@ export function NanobananaHome() {
           />
         </div>
       </motion.section>
-    </div>
+    </motion.div>
   );
 }
