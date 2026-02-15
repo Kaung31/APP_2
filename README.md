@@ -1,214 +1,178 @@
-# 🛴 Repair Hub - Pure Electric Scooter Knowledge Base
+# App Discovery Platform
 
-A comprehensive repair knowledge base and diagnostic tool for Pure Electric scooter mechanics.
+A modern, animated web application built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
 
-## 🎯 Purpose
+## 🚀 Features
 
-This app was created by a mechanic at Pure Electric (UK) to solve a real problem: **new mechanics and shops don't have standardized repair instructions**. This platform provides:
+- ✨ Smooth Framer Motion animations
+- 🎨 Webflow-inspired design
+- 📱 Fully responsive layout
+- ⚡ Next.js 14 with App Router
+- 🎭 Interactive hover effects and micro-interactions
+- 🌈 Beautiful gradient backgrounds
+- 💎 Modern card-based UI
+- 🔍 Search functionality
+- 📊 Stats section with animated counters
+- 🏷️ Category browsing
 
-- ✅ Step-by-step repair guides for all models
-- ✅ Complete error code database with solutions
-- ✅ Video tutorials from experienced mechanics
-- ✅ Specifications and common issues for each model
-- ✅ Search functionality to quickly find solutions
+## 🛠️ Tech Stack
 
-## 🚀 Quick Deploy to Vercel
+- **Framework:** Next.js 14
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Deployment:** Vercel
 
-### 1. Push to GitHub
+## 📦 Installation
 
+1. Clone the repository:
 ```bash
-# In your project folder
-git init
-git add .
-git commit -m "Initial commit - Repair Hub v2"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/repair-hub.git
-git push -u origin main
+git clone https://github.com/Kaung31/APP_2.git
+cd APP_2
 ```
 
-### 2. Deploy on Vercel
-
-**Option A: Website (Easiest)**
-1. Go to [vercel.com](https://vercel.com)
-2. Sign in with GitHub
-3. Click "Add New Project"
-4. Import your `repair-hub` repository
-5. Click "Deploy" (all settings auto-detected)
-6. Done! Get your live URL in 2-3 minutes
-
-**Option B: CLI**
+2. Install dependencies:
 ```bash
-npm i -g vercel
-vercel
-```
-
-## 💻 Local Development
-
-```bash
-# Install dependencies
 npm install
+```
 
-# Run development server
+3. Run the development server:
+```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📱 Features
+## 🔧 Configuration
 
-### 🏠 Dashboard
-- Quick search for error codes and parts
-- Live stats (repairs completed, parts availability)
-- Quick access to all models
-- Recent repair logs
+### Environment Variables
+Create a `.env.local` file if you need any environment variables:
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+```
 
-### 🛴 Models Section
-- Pure Air (Entry-level, 25km range)
-- Pure Pro (Mid-range, 40km range)
-- Advance (Premium, 50km range)
-- Air Go (Ultra-compact, 20km range)
+### Tailwind Configuration
+The project uses a custom Tailwind configuration with extended animations. Check `tailwind.config.js` for details.
 
-Each model page includes:
-- Full specifications
-- All repair guides specific to that model
-- Common error codes
-- Video tutorials
+## 🎨 Design Philosophy
 
-### ⚠️ Error Codes Database
-13 error codes documented including:
-- E01 - Throttle Malfunction
-- E07 - Motor Phase Wire Issue
-- E08 - Controller Communication Error
-- And more...
+This project follows Webflow's design principles:
+- Clean, modern aesthetics
+- Smooth, meaningful animations
+- Intuitive user interactions
+- Professional typography
+- Cohesive color schemes
+- Mobile-first approach
 
-Each error code includes:
-- Description and severity
-- Possible causes
-- Step-by-step solutions
-- Estimated repair time
-- Affected models
-
-### 📖 Repair Guides
-55+ repair procedures covering:
-- Battery replacement
-- Brake servicing
-- Motor diagnostics
-- Electronics repair
-- Mechanical adjustments
-- Wheel maintenance
-
-Organized by:
-- Difficulty level (Easy/Medium/Hard)
-- Category (Battery, Motor, Brakes, etc.)
-- Estimated time
-- Required tools
-
-### 🎥 Video Tutorials
-Video library with:
-- Beginner, Intermediate, Advanced categories
-- Duration and view counts
-- Difficulty ratings
-- Model-specific content
-
-## 🔧 Tech Stack
-
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Modern styling
-- **Lucide React** - Icon library
-- **Vercel** - Deployment platform
-
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```
-repair-hub-v2/
 ├── app/
-│   ├── page.tsx              # Dashboard/Homepage
-│   ├── models/
-│   │   ├── page.tsx          # Models overview
-│   │   └── [model]/page.tsx  # Individual model pages
-│   ├── error-codes/page.tsx  # Error codes database
-│   ├── guides/page.tsx       # Repair guides
-│   ├── videos/page.tsx       # Video tutorials
-│   ├── layout.tsx            # Root layout
-│   └── globals.css           # Global styles
-├── components/
-│   └── Sidebar.tsx           # Navigation sidebar
-├── package.json
-├── tsconfig.json
-├── tailwind.config.js
-└── next.config.mjs
+│   ├── page.tsx          # Main landing page
+│   ├── layout.tsx        # Root layout with navigation
+│   └── globals.css       # Global styles
+├── public/               # Static assets
+├── package.json          # Dependencies
+├── next.config.js        # Next.js configuration
+├── tailwind.config.js    # Tailwind configuration
+└── tsconfig.json         # TypeScript configuration
 ```
 
-## 🎨 Design Features
+## 🚢 Deployment
 
-- **Modern Bento-style UI** - Card-based dashboard layout
-- **Fully Responsive** - Works on mobile, tablet, desktop
-- **Smooth Animations** - Professional hover effects and transitions
-- **Dark Sidebar** - Easy navigation with active states
-- **Color-coded Difficulty** - Easy/Medium/Hard visual indicators
-- **Search Functionality** - Quick access to any content
+### Deploy to Vercel (Recommended)
 
-## 🚦 Future Enhancements
+1. Push your code to GitHub
 
-Ideas for v3:
-- [ ] User authentication (mechanic accounts)
-- [ ] Track completed repairs
-- [ ] Add personal notes to guides
-- [ ] Upload repair photos
-- [ ] Print/export repair procedures
-- [ ] Parts inventory management
-- [ ] Multi-language support
-- [ ] Mobile app version
-- [ ] Offline mode for workshop use
-- [ ] Integration with Pure Electric systems
+2. Import your repository in Vercel:
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your GitHub repository
+   - Click "Deploy"
 
-## 📝 How to Contribute Content
+3. Vercel will automatically:
+   - Install dependencies
+   - Build your project
+   - Deploy to production
 
-### Adding New Repair Guides
-1. Edit `app/guides/page.tsx`
-2. Add entry to `guides` array with:
-   - Title, category, difficulty
-   - Description, steps, required tools
-   - Estimated time
+### Manual Deployment
 
-### Adding Error Codes
-1. Edit `app/error-codes/page.tsx`
-2. Add entry to `errorCodes` array with:
-   - Code, name, severity
-   - Causes and solutions
-   - Affected models
-
-### Adding Video Tutorials
-1. Edit `app/videos/page.tsx`
-2. Add entry to `videos` array
-3. Include thumbnail emoji, duration, description
+```bash
+npm run build
+npm start
+```
 
 ## 🐛 Troubleshooting
 
-**Build fails:**
-- Check Node.js version (need 18.x or higher)
-- Run `npm install` to ensure dependencies are installed
+### Common Issues
 
-**Styles not loading:**
-- Ensure Tailwind is configured correctly
-- Check `globals.css` is imported in layout
+**Issue:** Framer Motion errors
+```bash
+npm install framer-motion
+```
 
-**Navigation not working:**
-- Verify all page files are in correct folders
-- Check Next.js App Router structure
+**Issue:** Build fails
+```bash
+# Clear cache and reinstall
+rm -rf node_modules .next
+npm install
+npm run build
+```
 
-## 📞 Support
+**Issue:** TypeScript errors
+- Check your `tsconfig.json`
+- Ensure all types are properly imported
 
-For issues or questions:
-1. Check Vercel deployment logs
-2. Review Next.js documentation
-3. Contact the development team
+## 📝 Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+## 🎯 Customization
+
+### Colors
+Edit `tailwind.config.js` to customize your color palette:
+```javascript
+theme: {
+  extend: {
+    colors: {
+      primary: '#your-color',
+      secondary: '#your-color',
+    }
+  }
+}
+```
+
+### Animations
+Modify animation variants in `page.tsx`:
+```typescript
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+};
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-Internal tool for Pure Electric mechanics. Not for public distribution.
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgments
+
+- Design inspiration from Webflow
+- Built with Next.js and Framer Motion
+- Icons and images from various sources
+
+## 📧 Contact
+
+For questions or support, please open an issue on GitHub.
 
 ---
 
-**Built by mechanics, for mechanics.** 🔧
+Made with ❤️ using Next.js 14

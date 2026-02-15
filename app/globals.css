@@ -3,24 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    @apply antialiased text-black bg-white selection:bg-yellow-200;
+    @apply bg-background text-foreground;
   }
 }
 
-/* Smooth Webflow-like transitions */
-.transition-all {
-  transition-duration: 600ms;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+/* Custom smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
-/* Custom shadow for Nanobanana aesthetic */
-.shadow-2xl {
-  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.1);
-}
-
-/* Remove default scrollbar for that app feel */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input {
+  transition: all 0.3s ease;
+}
+
+/* Focus states */
+button:focus,
+input:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
